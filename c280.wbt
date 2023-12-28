@@ -1,0 +1,62 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.24307483879683567 0.7881776146506094 0.5654119476165741 0.9986902929400718
+  position -1.531491072297232 -1.158250233056209 1.6031505785131872
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 0 -1 0 -5.307179586466759e-06
+  wallThickness 0.05
+  wallHeight 0.3
+}
+PointLight {
+  attenuation 0 0 1
+  location 0.6 0 0
+}
+DEF SLOPE Solid {
+  translation 0 0 0.15
+  rotation 0 1 0 0.4
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF BOX Box {
+        size 0.8 0.2 0.02
+      }
+    }
+  ]
+}
+Robot {
+  translation 0.297466 -0.0207937 0.250843
+  rotation -0.13963596051067667 0.6107018272923261 0.779451779569509 -3.106435307179586
+  children [
+    Altimeter {
+      rotation 0 1 0 4.6928e-06
+      children [
+        Transform {
+          translation 0.349941 0.0401683 0.0815
+          rotation 0.9351132545406678 0.2505650682045725 0.25056006820321153 1.63783
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 1 0
+                roughness 1
+                metalness 0
+              }
+              geometry DEF BODY Cylinder {
+                height 0.08
+                radius 0.045
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  contactMaterial "body"
+}
